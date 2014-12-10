@@ -1,0 +1,35 @@
+{
+  "name": "file-package",
+  "version": "1.0.1",
+  "description": "Compress files, then package them together",
+  "main": "file-package.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/douzi8/file-package.git"
+  },
+  "author": "douzi <liaowei08@gmail.com>",
+  "keywords": [
+    "package",
+    "compress",
+    "zip",
+    "file compress",
+    "packages"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/douzi8/file-package/issues"
+  },
+  "homepage": "https://github.com/douzi8/file-package",
+  "dependencies": {
+    "file-system": "^1.2.6",
+    "utils-extend": "^1.0.6",
+    "zip-stream": "^0.5.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0"
+  }
+}
