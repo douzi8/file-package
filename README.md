@@ -19,6 +19,23 @@ filePackage('src', 'path/dest.zip', {
   }
 });
 ```
+### grunt
+```js
+var filePackage = require('file-package');
+
+grunt.registerTask('zip', function() {
+  var done = this.async();
+  filePackage('src', 'path/src.zip', {
+    level: 9,
+    packageRoot: 'root',
+    done: function(size) {
+      console.log(size);
+      done();
+    }
+  });
+});
+```
+
 ### options
 * mode {number}  
 Set the file permissions.
