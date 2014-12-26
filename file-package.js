@@ -34,10 +34,10 @@ function filePackage(src, dest, options) {
   }
   var output = file.createWriteStream(dest);
 
-  function done() {
-    archive.finish();
+  output.on('close', function() {
     options.done(archive.getBytesWritten());
-  }
+  });
+
   // Recurse src folder
   file.recurseSync(src, options.filter, function(filepath, filename) {
     if (!filename) return;
@@ -57,7 +57,7 @@ function filePackage(src, dest, options) {
     archive.entry(item.stream, { name: dest }, function() {
       entry.count++;
       if (entry.count === files.length) {
-        return done();
+        return archive.finish();;
       }
       entry(files[entry.count]);
     });
@@ -67,7 +67,7 @@ function filePackage(src, dest, options) {
   if (files.length) {
     entry(files[0]);
   } else {
-    done();
+    archive.finish();
   }
 }
 
