@@ -1,6 +1,6 @@
 {
   "name": "file-package",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Compress files, then package them together",
   "main": "file-package.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "zip",
     "file compress",
     "packages",
-    "imagemin"
+    "grunt compress"
   ],
   "license": "ISC",
   "bugs": {
@@ -25,8 +25,7 @@
   },
   "homepage": "https://github.com/douzi8/file-package",
   "dependencies": {
-    "file-system": "^1.2.6",
-    "imagemin": "^3.1.0",
+    "file-system": "^2.0.0",
     "utils-extend": "^1.0.6",
     "zip-stream": "^0.5.0"
   },
