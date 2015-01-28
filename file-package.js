@@ -41,23 +41,20 @@ function filePackage(src, dest, options) {
   // Recurse src folder
   file.recurseSync(src, options.filter, function(filepath, filename) {
     if (!filename) return;
-
-    files.push({
-      filepath: filepath,
-      stream: file.createReadStream(filepath)
-    });
+    files.push(filepath);
   });
 
   archive.pipe(output);
 
-  function entry(item) {
-    var relative = path.relative(src, item.filepath);
+  function entry(filepath) {
+    var relative = path.relative(src, filepath);
     var dest = path.join(options.packageRoot, relative);
+    var stream = file.createReadStream(filepath);
 
-    archive.entry(item.stream, { name: dest }, function() {
+    archive.entry(stream, { name: dest }, function() {
       entry.count++;
       if (entry.count === files.length) {
-        return archive.finish();;
+        return archive.finish();
       }
       entry(files[entry.count]);
     });

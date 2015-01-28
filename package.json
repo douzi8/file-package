@@ -1,6 +1,6 @@
 {
   "name": "file-package",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Compress files, then package them together",
   "main": "file-package.js",
   "scripts": {
