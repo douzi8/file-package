@@ -39,7 +39,7 @@ function filePackage(src, dest, options) {
   });
 
   // Recurse src folder
-  file.recurseSync(src, options.filter, function(filepath, filename) {
+  file.recurseSync(src, options.filter, function(filepath, relative, filename) {
     if (!filename) return;
     files.push(filepath);
   });

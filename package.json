@@ -1,6 +1,6 @@
 {
   "name": "file-package",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Compress files, then package them together",
   "main": "file-package.js",
   "scripts": {
@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/douzi8/file-package",
   "dependencies": {
-    "file-system": "^2.1.1",
+    "file-system": "^2.2.1",
     "utils-extend": "^1.0.7",
     "zip-stream": "^0.5.0"
   },
